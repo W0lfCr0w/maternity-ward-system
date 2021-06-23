@@ -1,0 +1,15 @@
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/maternity-ward-system.deps.json
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/maternity-ward-system.runtimeconfig.json
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/maternity-ward-system.runtimeconfig.dev.json
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/maternity-ward-system.dll
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/ref/maternity-ward-system.dll
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/maternity-ward-system.pdb
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.csproj.AssemblyReference.cache
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.AssemblyInfoInputs.cache
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.AssemblyInfo.cs
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.csproj.CoreCompileInputs.cache
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.dll
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/ref/maternity-ward-system.dll
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.pdb
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.genruntimeconfig.cache
