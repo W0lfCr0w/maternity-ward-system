@@ -17,11 +17,13 @@ namespace maternity_ward_system
             HourlyPay = BasePay;
             ExpertHourlyPay = 1.3 * BasePay;
             RiskFactorBonus = 1.2;
+            UniqueJobDescripition = "Specialises in cleaning poison";
+            MinimumMonthlyHours = 50;
         }
         public PoisonCleaner(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public double GetDecisionMakerBonusPay()
         {
-            if(this.workInformation.HoursWorked > 50)
+            if(this.workInformation.HoursWorked > this.MinimumMonthlyHours)
                 return 200 * (1.5 * HourlyPay);
             else
                 return 0;
