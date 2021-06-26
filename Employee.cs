@@ -9,7 +9,7 @@ namespace maternity_ward_system
         private int _age;
         public WorkingHours workInformation;
 
-        protected abstract double EndOfMonthSalary();
+        public abstract double EndOfMonthSalary();
         public string FirstName
         {
             get{ return this._firstName;} 
