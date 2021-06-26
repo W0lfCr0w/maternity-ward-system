@@ -2,15 +2,7 @@ namespace maternity_ward_system
 {
     public class Cleaner : Employee, IMinorEmployee
     {
-        private double _payRate;
-        public double HourlyPay
-        {
-            get{ return this._payRate; }
-            set
-            {
-                this._payRate = value;
-            }
-        }
+       public double HourlyPay{get; private set;}
         public Cleaner(string fname, string lname, string id, int age, double hours)
         {
             FirstName = fname;
@@ -24,7 +16,7 @@ namespace maternity_ward_system
         
         public override double EndOfMonthSalary()
         {
-            return workInformation.HoursWorked * HourlyPay;
+            return this.workInformation.HoursWorked * HourlyPay;
         }
     }
 }
