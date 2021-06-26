@@ -17,7 +17,7 @@ namespace maternity_ward_system
             ManagerSalary = managerSalaray;
         }
         public HeadOfManagement(string fname, string lname, string id, int age, double managerSalaray) 
-            :this(fname, lname, id, age, managerSalaray, 0){}
+            :this(fname, lname, id, age, 0, managerSalaray){}
         public double GetDecisionMakerBonusPay()
         {
             if(this.workInformation.HoursWorked > MinimumMonthlyHours)
