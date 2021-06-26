@@ -2,7 +2,7 @@ namespace maternity_ward_system
 {
     public class Doctor: Employee, ISeniorEmployee
     {
-        public double HourlyPay{get; private set;}
+        public double HourlyPay{get; protected set;}
         public void SeniorEmployeeRaise()
         {
             HourlyPay = HourlyPay * 1.05;
