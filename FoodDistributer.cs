@@ -1,9 +1,9 @@
 namespace maternity_ward_system
 {
-    public class Cleaner : Employee, IMinorEmployee
+    public class FoodDistributer: Employee, IMinorEmployee
     {
-       public double HourlyPay{get; private set;}
-        public Cleaner(string fname, string lname, string id, int age, double hours)
+        public double HourlyPay{get; private set;}
+        public FoodDistributer(string fname, string lname, string id, int age, double hours)
         {
             FirstName = fname;
             LastName = lname;
@@ -12,7 +12,7 @@ namespace maternity_ward_system
             this.workInformation = new WorkingHours(hours);
             HourlyPay = BasePay;
         }
-        public Cleaner(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
+        public FoodDistributer(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         
         public override double EndOfMonthSalary()
         {
