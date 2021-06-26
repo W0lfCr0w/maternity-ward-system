@@ -25,5 +25,11 @@ namespace maternity_ward_system
         }
         public WorkingHours():this(0){}
 
+        public void AddHours(double hours)
+        {
+            if(hours > 0) 
+                HoursWorked += hours;
+        }
+
     }
 }
