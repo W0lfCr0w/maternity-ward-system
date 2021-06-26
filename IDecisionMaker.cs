@@ -2,8 +2,8 @@ namespace maternity_ward_system
 {
     public interface IDecisionMaker : IMinorEmployee
     {
-        public string UniqueJobDescripition{get; set;}
-        public int MinimumMonthlyHours{get; set;}
+        public string UniqueJobDescripition{get;}
+        public int MinimumMonthlyHours{get; }
         public double GetDecisionMakerBonusPay();
 
     }

@@ -1,7 +1,7 @@
 namespace maternity_ward_system
 {
-    public interface IManager : IEmployee
+    public interface IManager
     {
-        public double ManagerSalary{get; set;}
+        public double ManagerSalary{get; }
     }
 }

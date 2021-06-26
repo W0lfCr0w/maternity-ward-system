@@ -1,6 +1,6 @@
 namespace maternity_ward_system
 {
-    public class Employee
+    public abstract class Employee
     {   
         public const double BasePay = 30;
         private string _firstName;
@@ -8,6 +8,8 @@ namespace maternity_ward_system
         private string _id;
         private int _age;
         public WorkingHours workInformation;
+
+        public abstract double EndOfMonthSalary();
         public string FirstName
         {
             get{ return this._firstName;} 
@@ -56,14 +58,6 @@ namespace maternity_ward_system
                 }
             }
         }
-        public Employee(string firstname, string lastname, string id, int age, double hours)
-        {
-            FirstName = firstname;
-            LastName = lastname;
-            ID = id;
-            Age = age;
-            this.workInformation = new WorkingHours(hours);
-        }
-        public Employee(string firstname, string lastname, string id, int age):this(firstname, lastname, id, age, 0){}
+        
     }
 }

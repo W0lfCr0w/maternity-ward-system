@@ -1,7 +1,7 @@
 namespace maternity_ward_system
 {
-    public interface IRiskFactorEmployee : IEmployee
+    public interface IRiskFactorEmployee 
     {
-        public double RiskFactorBonus{get; set;}
+        public double RiskFactorBonus{get; }
     }
 }
