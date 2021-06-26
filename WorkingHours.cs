@@ -3,10 +3,10 @@ namespace maternity_ward_system
     public class WorkingHours
     {
         private double _hoursWorked;
-        protected double HoursWorked
+        public double HoursWorked
         {
             get { return this._hoursWorked; }
-            set
+            private set
             {
                 if(value < 0)
                 {
