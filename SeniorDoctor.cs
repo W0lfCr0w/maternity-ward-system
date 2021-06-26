@@ -6,13 +6,6 @@ namespace maternity_ward_system
         public int MinimumMonthlyHours{get; protected set;}
         public SeniorDoctor(string fname, string lname, string id, int age, double hours) :base(fname, lname, id, age, hours)
         {
-            FirstName = fname;
-            LastName = lname;
-            ID = id;
-            Age = age;
-            this.workInformation = new WorkingHours(hours);
-            HourlyPay = BasePay;
-            SeniorEmployeeRaise();
             MinimumMonthlyHours = 50;
             UniqueJobDescripition = "Senior Doctor can override a Doctor's decision about a patient";
         }
