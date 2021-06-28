@@ -6,7 +6,7 @@ namespace maternity_ward_system
         public double HoursWorked
         {
             get { return this._hoursWorked; }
-            private set
+            set
             {
                 if(value < 0)
                 {
