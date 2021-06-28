@@ -15,6 +15,7 @@ namespace maternity_ward_system
             this.workInformation = new WorkingHours(hours);
             HourlyPay = BasePay;
             ManagerSalary = managerSalaray;
+            ExtraField = managerSalaray.ToString();
             MyEmployeeType = EmployeeType.HeadOfManagement.ToString();
         }
         public HeadOfManagement(string fname, string lname, string id, int age, double managerSalaray) 

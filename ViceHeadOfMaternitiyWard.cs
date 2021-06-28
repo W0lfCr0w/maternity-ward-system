@@ -17,6 +17,7 @@ namespace maternity_ward_system
             MinimumMonthlyHours = 50;
             UniqueJobDescripition = "The Vice has complete control when the Head of the ward is not around";
             ManagerSalary = managerSalaray;
+            ExtraField = managerSalaray.ToString();
             MyEmployeeType = EmployeeType.ViceHeadOfWard.ToString();
         }
         public ViceHeadOfMaternitiyWard(string fname, string lname, string id, int age, double managerSalaray)
