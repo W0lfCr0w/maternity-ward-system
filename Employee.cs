@@ -7,6 +7,7 @@ namespace maternity_ward_system
         private string _lastName;
         private string _id;
         private int _age;
+        private string _employeeType;
         public WorkingHours workInformation;
 
         public abstract double EndOfMonthSalary();
@@ -58,6 +59,27 @@ namespace maternity_ward_system
                 }
             }
         }
-        
+        public string EmployeeType
+        {
+            get
+            {
+                return this._employeeType;
+            }
+            set
+            {
+                this._employeeType = value;
+            }
+        }
+        public double HoursWorked
+        {
+            get
+            {
+                return this.workInformation.HoursWorked;
+            }
+            set
+            {
+                this.workInformation.HoursWorked = value;
+            }
+        }
     }
 }
