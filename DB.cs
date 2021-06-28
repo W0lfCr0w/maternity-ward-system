@@ -1,5 +1,8 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace maternity_ward_system
 {
     public enum EmployeeType
@@ -17,7 +20,7 @@ namespace maternity_ward_system
     public class DB
     {
         private List<Employee> _employeesDB;
-        public DB(){ this._employeesDB = new List<Employee>(); }
+        public DB(){ LoadDB(); }
         
         public string GetFirstName()
         {
@@ -48,12 +51,24 @@ namespace maternity_ward_system
             string id;
             Console.WriteLine("Enter Employee ID (5 digits long):");
             id = Console.ReadLine();
-            while (string.IsNullOrEmpty(id) || id.Length != 5)
+            while (string.IsNullOrEmpty(id) || id.Length != 5 || isIDExist(id))
             {
-                Console.WriteLine("Error! ID must be 5 digits");
+                if(isIDExist(id))
+                    Console.WriteLine("Error! ID already exists!");
+                else
+                    Console.WriteLine("Error! ID must be 5 digits!");
                 id = Console.ReadLine();
             }
             return id;
+        }
+        public bool isIDExist(string newID)
+        {
+            foreach(Employee e in this._employeesDB)
+            {
+                if(e.ID == newID)
+                    return true;
+            }
+            return false;
         }
         public int GetAge()
         {
@@ -205,13 +220,26 @@ namespace maternity_ward_system
             }
 
         }
-        public void PrintEmployees()
+        public void SaveDB()
         {
-            foreach(Employee e in this._employeesDB)
-            {
-                Console.WriteLine($"Employee #{e.ID} : First name: {e.FirstName}, Last Name: {e.LastName}, Age: {e.Age}");
-                Console.WriteLine($"Has worked for {e.workInformation.HoursWorked} this month");
-            }
+            string jsonDB = "EmployeesDB.json";
+            string db = JsonSerializer.Serialize(this._employeesDB);
+            File.WriteAllText(jsonDB, db);
+        }
+        public void LoadDB()
+        {
+        //     try
+        //     {
+        //         string jsonDB = "EmployeesDB.json";
+        //         string jsonString = File.ReadAllText(jsonDB);
+        //         List<string> db = JsonSerializer.Deserialize<List<string>>(jsonString); 
+        //         this._employeesDB = new List<Employee>();
+        //     }
+        //     catch (FileNotFoundException)
+        //     {
+        //         this._employeesDB = new List<Employee>();
+        //     }
+            
         }
     }
 }
