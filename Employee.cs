@@ -1,5 +1,7 @@
+using System;
 namespace maternity_ward_system
 {
+    [Serializable]
     public abstract class Employee
     {   
         public const double BasePay = 30;
@@ -8,8 +10,8 @@ namespace maternity_ward_system
         private string _id;
         private int _age;
         private string _employeeType;
+        private string _extraField = "0.0";
         public WorkingHours workInformation;
-
         public abstract double EndOfMonthSalary();
         public string FirstName
         {
@@ -79,6 +81,17 @@ namespace maternity_ward_system
             set
             {
                 this.workInformation.HoursWorked = value;
+            }
+        }
+        public string ExtraField
+        {
+            get
+            {
+                return this._extraField;
+            }
+            set
+            {
+                this._extraField = value;
             }
         }
     }
