@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Cjvmw8Jd8uAsFn4ju0S6iXpaJUo9O6yFHpfiSMVWmcRQaVIWeaS8YhDCZ7jrSTQkwNOiks8tNo9qGaPD1flDnA==",
+  "dgSpecHash": "WzQFfGCS0QSnFevuBQQOpg25R+t6hD4YlE6bG2bV8dcgqAYiuR/WpFfEPa9oI5F7gEniVrcmbjj3x0dTwuvPEw==",
   "success": true,
   "projectFilePath": "/Users/hunter/Coding/maternity-ward-system/maternity-ward-system.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/hunter/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

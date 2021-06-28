@@ -13,3 +13,5 @@
 /Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/ref/maternity-ward-system.dll
 /Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.pdb
 /Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.genruntimeconfig.cache
+/Users/hunter/Coding/maternity-ward-system/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/hunter/Coding/maternity-ward-system/obj/Debug/net5.0/maternity-ward-system.csproj.CopyComplete
