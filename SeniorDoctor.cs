@@ -8,6 +8,7 @@ namespace maternity_ward_system
         {
             MinimumMonthlyHours = 50;
             UniqueJobDescripition = "Senior Doctor can override a Doctor's decision about a patient";
+            MyEmployeeType = EmployeeType.SeniorDoctor.ToString();
         }
         public SeniorDoctor(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public double GetDecisionMakerBonusPay()

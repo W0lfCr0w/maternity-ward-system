@@ -9,6 +9,7 @@ namespace maternity_ward_system
         {
             UniqueJobDescripition = "The Chef of the kitchen makes choices about the food being served";
             MinimumMonthlyHours = 50;
+            MyEmployeeType = EmployeeType.Chef.ToString();
         }
         public Chef(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public double GetDecisionMakerBonusPay()

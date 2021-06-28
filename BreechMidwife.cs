@@ -11,6 +11,7 @@ namespace maternity_ward_system
             Age = age;
             this.workInformation = new WorkingHours(hours);
             ExpertHourlyPay = BasePay * 1.3 ;
+            MyEmployeeType = EmployeeType.BreechMidwife.ToString();
         }
         public BreechMidwife(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public override double EndOfMonthSalary()

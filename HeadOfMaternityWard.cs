@@ -7,6 +7,8 @@ namespace maternity_ward_system
             :base(fname, lname, id, age, hours, managerSalaray)
             {
                 RiskFactorBonus = 2.0;
+                MyEmployeeType = EmployeeType.HeadOfWard.ToString();
+                ExtraField = managerSalaray.ToString();
             }
         public HeadOfMaternityWard(string fname, string lname, string id, int age, double managerSalaray)
             :this(fname, lname, id, age, 0, managerSalaray){}

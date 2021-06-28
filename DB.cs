@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 namespace maternity_ward_system
 {
     public enum EmployeeType
@@ -21,6 +23,26 @@ namespace maternity_ward_system
     {
         private List<Employee> _employeesDB;
         public DB(){ LoadDB(); }
+        private class GeneralEmployee
+        {
+            public string FirstName{get; set;}
+            public string LastName{get; set;}
+            public string ID{get; set;}
+            public int Age{get; set;}
+            public string MyEmployeeType{get; set;}
+            public double HoursWorked{get; set;}
+            public string ExtraField{get; set;}
+            public GeneralEmployee(string fname, string lname, int age, string id, string e, double hours, string extra)
+            {
+                FirstName = fname;
+                LastName = lname;
+                ID = id;
+                Age = age;
+                MyEmployeeType = e;
+                HoursWorked = hours;
+                ExtraField = extra;
+            }
+        }
         
         public string GetFirstName()
         {
@@ -93,6 +115,19 @@ namespace maternity_ward_system
                 stringsalary = Console.ReadLine();
             }
             return salary;
+        }
+        public void AddHoursToEmployee(string id, double hours)
+        {
+            _employeesDB.Find(e => e.ID ==id).workInformation.AddHours(hours);
+        }
+        public string[] GetEmployeeDetails(string id)
+        {
+            var e = _employeesDB.Find(e => e.ID == id);
+            string[] details = new string[3];
+            details[0] = e.EndOfMonthSalary().ToString();
+            details[1] = e.HoursWorked.ToString("0.00");
+            details[2] = e.FirstName + " " + e.LastName;
+            return details;
         }
         public void AddToDB(Employee e)
         {
@@ -220,26 +255,154 @@ namespace maternity_ward_system
             }
 
         }
+        private void AddEmployee(GeneralEmployee ge)
+        {
+            switch(Enum.Parse(typeof(EmployeeType), ge.MyEmployeeType))
+            {
+                case EmployeeType.Cleaner:
+                {
+                    AddToDB(new Cleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.PoisonCleaner:
+                {
+                    AddToDB(new PoisonCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.HeadCleaner:
+                {
+                    AddToDB(new HeadCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.SupervisorCleaner:
+                {
+                    AddToDB(new SupervisorCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Cook:
+                {
+                    AddToDB(new Cook(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.SousChef:
+                {
+                    AddToDB(new SousChef(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Chef:
+                {
+                    AddToDB(new Chef(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.FoodDistributer:
+                {
+                    AddToDB(new FoodDistributer(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.HeadOfManagement:
+                {
+                    AddToDB(new HeadOfManagement(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
+                    break;
+                }
+                case EmployeeType.FirstAid:
+                {
+                    AddToDB(new FirstAid(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Nurse:
+                {
+                    AddToDB(new Nurse(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Paramedic:
+                {
+                    AddToDB(new Paramedic(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.HeadNurse:
+                {
+                    AddToDB(new HeadNurse(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Midwife:
+                {
+                    AddToDB(new Midwife(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.BreechMidwife:
+                {
+                    AddToDB(new BreechMidwife(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Intern:
+                {
+                    AddToDB(new Intern(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.BreechIntern:
+                {
+                    AddToDB(new InternWithBreechSpecialty(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.Doctor:
+                {
+                    AddToDB(new Doctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.SeniorDoctor:
+                {
+                    AddToDB(new SeniorDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.SpecialityDcotor:
+                {
+                    AddToDB(new SpecialityDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
+                    break;
+                }
+                case EmployeeType.ViceHeadOfWard:
+                {
+                    AddToDB(new ViceHeadOfMaternitiyWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
+                    break;
+                }
+                case EmployeeType.HeadOfWard:
+                {
+                    AddToDB(new HeadOfMaternityWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+        }
         public void SaveDB()
         {
             string jsonDB = "EmployeesDB.json";
-            string db = JsonSerializer.Serialize(this._employeesDB);
+            string db = System.Text.Json.JsonSerializer.Serialize(this._employeesDB);
             File.WriteAllText(jsonDB, db);
         }
         public void LoadDB()
         {
-        //     try
-        //     {
-        //         string jsonDB = "EmployeesDB.json";
-        //         string jsonString = File.ReadAllText(jsonDB);
-        //         List<string> db = JsonSerializer.Deserialize<List<string>>(jsonString); 
-        //         this._employeesDB = new List<Employee>();
-        //     }
-        //     catch (FileNotFoundException)
-        //     {
-        //         this._employeesDB = new List<Employee>();
-        //     }
-            
+            // this._employeesDB = new List<Employee>();
+            try
+            {
+                string jsonDB = "EmployeesDB.json";
+                string jsonString = File.ReadAllText(jsonDB);
+                List<GeneralEmployee> tempDB = JsonConvert.DeserializeObject<List<GeneralEmployee>>(jsonString);
+                this._employeesDB = new List<Employee>();
+                GenEmployeeToEmployeeDB(tempDB);
+            }
+            catch (FileNotFoundException)
+            {
+                this._employeesDB = new List<Employee>();
+            }
+        }
+        private void GenEmployeeToEmployeeDB(List<GeneralEmployee> tempDB)
+        {
+            foreach(GeneralEmployee ge in tempDB)
+            {
+                AddEmployee(ge);
+            }
         }
     }
 }

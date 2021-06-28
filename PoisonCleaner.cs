@@ -19,6 +19,7 @@ namespace maternity_ward_system
             RiskFactorBonus = 1.2;
             UniqueJobDescripition = "Specialises in cleaning poison";
             MinimumMonthlyHours = 50;
+            MyEmployeeType = EmployeeType.PoisonCleaner.ToString();
         }
         public PoisonCleaner(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public double GetDecisionMakerBonusPay()

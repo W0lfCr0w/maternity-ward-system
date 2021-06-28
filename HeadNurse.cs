@@ -20,6 +20,7 @@ namespace maternity_ward_system
             SeniorEmployeeRaise();
             UniqueJobDescripition = "The Head Nurse can supervise other nurses and talks directly with the doctor if a critical problem arises";
             MinimumMonthlyHours = 50;
+            MyEmployeeType = EmployeeType.HeadNurse.ToString();
         }
         public HeadNurse(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public double GetDecisionMakerBonusPay()
