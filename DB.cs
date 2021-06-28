@@ -116,6 +116,19 @@ namespace maternity_ward_system
             }
             return salary;
         }
+        public void AddHoursToEmployee(string id, double hours)
+        {
+            _employeesDB.Find(e => e.ID ==id).workInformation.AddHours(hours);
+        }
+        public string[] GetEmployeeDetails(string id)
+        {
+            var e = _employeesDB.Find(e => e.ID == id);
+            string[] details = new string[3];
+            details[0] = e.EndOfMonthSalary().ToString();
+            details[1] = e.HoursWorked.ToString("0.00");
+            details[2] = e.FirstName + " " + e.LastName;
+            return details;
+        }
         public void AddToDB(Employee e)
         {
             this._employeesDB.Add(e); 
@@ -248,112 +261,112 @@ namespace maternity_ward_system
             {
                 case EmployeeType.Cleaner:
                 {
-                    AddToDB(new Cleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Cleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.PoisonCleaner:
                 {
-                    AddToDB(new PoisonCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new PoisonCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.HeadCleaner:
                 {
-                    AddToDB(new HeadCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new HeadCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.SupervisorCleaner:
                 {
-                    AddToDB(new SupervisorCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new SupervisorCleaner(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Cook:
                 {
-                    AddToDB(new Cook(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Cook(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.SousChef:
                 {
-                    AddToDB(new SousChef(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new SousChef(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Chef:
                 {
-                    AddToDB(new Chef(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Chef(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.FoodDistributer:
                 {
-                    AddToDB(new FoodDistributer(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new FoodDistributer(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.HeadOfManagement:
                 {
-                    AddToDB(new HeadOfManagement(ge.FirstName, ge.LastName, ge.ID, ge.Age, double.Parse(ge.ExtraField)));
+                    AddToDB(new HeadOfManagement(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
                     break;
                 }
                 case EmployeeType.FirstAid:
                 {
-                    AddToDB(new FirstAid(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new FirstAid(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Nurse:
                 {
-                    AddToDB(new Nurse(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Nurse(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Paramedic:
                 {
-                    AddToDB(new Paramedic(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Paramedic(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.HeadNurse:
                 {
-                    AddToDB(new HeadNurse(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new HeadNurse(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Midwife:
                 {
-                    AddToDB(new Midwife(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Midwife(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.BreechMidwife:
                 {
-                    AddToDB(new BreechMidwife(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new BreechMidwife(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Intern:
                 {
-                    AddToDB(new Intern(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Intern(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.BreechIntern:
                 {
-                    AddToDB(new InternWithBreechSpecialty(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new InternWithBreechSpecialty(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.Doctor:
                 {
-                    AddToDB(new Doctor(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new Doctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.SeniorDoctor:
                 {
-                    AddToDB(new SeniorDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new SeniorDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.SpecialityDcotor:
                 {
-                    AddToDB(new SpecialityDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age));
+                    AddToDB(new SpecialityDoctor(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked));
                     break;
                 }
                 case EmployeeType.ViceHeadOfWard:
                 {
-                    AddToDB(new ViceHeadOfMaternitiyWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, double.Parse(ge.ExtraField)));
+                    AddToDB(new ViceHeadOfMaternitiyWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
                     break;
                 }
                 case EmployeeType.HeadOfWard:
                 {
-                    AddToDB(new HeadOfMaternityWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, double.Parse(ge.ExtraField)));
+                    AddToDB(new HeadOfMaternityWard(ge.FirstName, ge.LastName, ge.ID, ge.Age, ge.HoursWorked, double.Parse(ge.ExtraField)));
                     break;
                 }
                 default:
