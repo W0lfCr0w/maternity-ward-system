@@ -59,7 +59,7 @@ namespace maternity_ward_system
                 }
             }
         }
-        public string EmployeeType
+        public string MyEmployeeType
         {
             get
             {

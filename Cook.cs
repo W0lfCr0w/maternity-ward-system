@@ -16,6 +16,7 @@ namespace maternity_ward_system
             this.workInformation = new WorkingHours(hours);
             HourlyPay = BasePay;
             SeniorEmployeeRaise();
+            MyEmployeeType = EmployeeType.Cook.ToString();
         }
         public Cook(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public override double EndOfMonthSalary()

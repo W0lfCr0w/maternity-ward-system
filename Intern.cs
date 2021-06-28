@@ -11,6 +11,7 @@ namespace maternity_ward_system
             Age = age;
             this.workInformation = new WorkingHours(hours);
             HourlyPay = BasePay;
+            MyEmployeeType = EmployeeType.Intern.ToString();
         }
         public Intern(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         

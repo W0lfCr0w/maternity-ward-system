@@ -7,6 +7,7 @@ namespace maternity_ward_system
             :base(fname, lname, id, age, hours)
             {
                 ExpertHourlyPay = 1.3 * base.HourlyPay;
+                MyEmployeeType = EmployeeType.SpecialityDcotor.ToString();
             }
         public SpecialityDoctor(string fname, string lname, string id, int age)
             :this(fname, lname, id, age, 0){}

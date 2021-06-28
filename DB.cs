@@ -228,6 +228,7 @@ namespace maternity_ward_system
         }
         public void LoadDB()
         {
+            this._employeesDB = new List<Employee>();
         //     try
         //     {
         //         string jsonDB = "EmployeesDB.json";

@@ -7,6 +7,7 @@ namespace maternity_ward_system
             :base(fname, lname, id, age, hours)
             {
                 ExpertHourlyPay = HourlyPay * 1.3;
+                MyEmployeeType = EmployeeType.SousChef.ToString();
             }
         public SousChef(string fname, string lname, string id, int age) :this(fname, lname, id, age, 0){}
         public override double EndOfMonthSalary()

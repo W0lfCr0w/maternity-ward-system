@@ -21,7 +21,7 @@ namespace maternity_ward_system
                 string response = Console.ReadLine();
                 if(response == "Save" || response == "save")
                 {
-                    db.PrintEmployees();
+                    db.SaveDB();
                     Console.WriteLine("Thank you and goodbye");
                     isSaved = true;
                 }
