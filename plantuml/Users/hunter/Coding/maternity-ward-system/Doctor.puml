@@ -1,0 +1,11 @@
+@startuml
+class Doctor {
+    + HourlyPay : double <<get>> <<protected set>>
+    + SeniorEmployeeRaise() : void
+    + Doctor(fname:string, lname:string, id:string, age:int, hours:double)
+    + Doctor(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Doctor
+ISeniorEmployee <|-- Doctor
+@enduml

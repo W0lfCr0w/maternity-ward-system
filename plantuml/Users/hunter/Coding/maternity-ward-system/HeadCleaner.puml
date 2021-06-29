@@ -1,0 +1,11 @@
+@startuml
+class HeadCleaner {
+    + HourlyPay : double <<get>>
+    + SeniorEmployeeRaise() : void
+    + HeadCleaner(fname:string, lname:string, id:string, age:int, hours:double)
+    + HeadCleaner(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- HeadCleaner
+ISeniorEmployee <|-- HeadCleaner
+@enduml

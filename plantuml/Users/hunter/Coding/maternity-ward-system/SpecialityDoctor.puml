@@ -1,0 +1,10 @@
+@startuml
+class SpecialityDoctor {
+    + ExpertHourlyPay : double <<get>>
+    + SpecialityDoctor(fname:string, lname:string, id:string, age:int, hours:double)
+    + SpecialityDoctor(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+SeniorDoctor <|-- SpecialityDoctor
+IExpertEmployee <|-- SpecialityDoctor
+@enduml

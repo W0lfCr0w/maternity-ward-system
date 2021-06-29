@@ -1,0 +1,10 @@
+@startuml
+class Intern {
+    + HourlyPay : double <<get>>
+    + Intern(fname:string, lname:string, id:string, age:int, hours:double)
+    + Intern(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Intern
+IMinorEmployee <|-- Intern
+@enduml

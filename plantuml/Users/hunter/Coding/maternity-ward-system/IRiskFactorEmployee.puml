@@ -1,0 +1,5 @@
+@startuml
+interface IRiskFactorEmployee {
+    + RiskFactorBonus : double <<get>>
+}
+@enduml

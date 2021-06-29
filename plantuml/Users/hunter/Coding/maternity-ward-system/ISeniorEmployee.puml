@@ -1,0 +1,6 @@
+@startuml
+interface ISeniorEmployee {
+    + SeniorEmployeeRaise() : void
+}
+IMinorEmployee <|-- ISeniorEmployee
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class SeniorDoctor {
+    + UniqueJobDescripition : string <<get>> <<protected set>>
+    + MinimumMonthlyHours : int <<get>> <<protected set>>
+    + SeniorDoctor(fname:string, lname:string, id:string, age:int, hours:double)
+    + SeniorDoctor(fname:string, lname:string, id:string, age:int)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Doctor <|-- SeniorDoctor
+IDecisionMaker <|-- SeniorDoctor
+@enduml

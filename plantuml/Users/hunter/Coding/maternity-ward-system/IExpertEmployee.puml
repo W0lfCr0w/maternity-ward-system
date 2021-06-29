@@ -1,0 +1,5 @@
+@startuml
+interface IExpertEmployee {
+    + ExpertHourlyPay : double <<get>>
+}
+@enduml

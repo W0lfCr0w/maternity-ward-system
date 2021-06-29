@@ -1,0 +1,10 @@
+@startuml
+class FirstAid {
+    + HourlyPay : double <<get>>
+    + FirstAid(fname:string, lname:string, id:string, age:int, hours:double)
+    + FirstAid(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- FirstAid
+IMinorEmployee <|-- FirstAid
+@enduml

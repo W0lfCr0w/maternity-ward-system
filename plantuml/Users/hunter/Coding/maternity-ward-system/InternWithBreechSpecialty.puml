@@ -1,0 +1,10 @@
+@startuml
+class InternWithBreechSpecialty {
+    + ExpertHourlyPay : double <<get>>
+    + InternWithBreechSpecialty(fname:string, lname:string, id:string, age:int, hours:double)
+    + InternWithBreechSpecialty(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Intern <|-- InternWithBreechSpecialty
+IExpertEmployee <|-- InternWithBreechSpecialty
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+!include ./Users/hunter/Coding/maternity-ward-system/SupervisorCleaner.puml
+!include ./Users/hunter/Coding/maternity-ward-system/HeadOfMaternityWard.puml
+!include ./Users/hunter/Coding/maternity-ward-system/HeadCleaner.puml
+!include ./Users/hunter/Coding/maternity-ward-system/SousChef.puml
+!include ./Users/hunter/Coding/maternity-ward-system/WorkingHours.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Intern.puml
+!include ./Users/hunter/Coding/maternity-ward-system/HeadNurse.puml
+!include ./Users/hunter/Coding/maternity-ward-system/DB.puml
+!include ./Users/hunter/Coding/maternity-ward-system/PoisonCleaner.puml
+!include ./Users/hunter/Coding/maternity-ward-system/SeniorDoctor.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Nurse.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Paramedic.puml
+!include ./Users/hunter/Coding/maternity-ward-system/InternWithBreechSpecialty.puml
+!include ./Users/hunter/Coding/maternity-ward-system/IDecisionMaker.puml
+!include ./Users/hunter/Coding/maternity-ward-system/FoodDistributer.puml
+!include ./Users/hunter/Coding/maternity-ward-system/IExpertEmployee.puml
+!include ./Users/hunter/Coding/maternity-ward-system/SpecialityDoctor.puml
+!include ./Users/hunter/Coding/maternity-ward-system/IMinorEmployee.puml
+!include ./Users/hunter/Coding/maternity-ward-system/HeadOfManagement.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Doctor.puml
+!include ./Users/hunter/Coding/maternity-ward-system/IManager.puml
+!include ./Users/hunter/Coding/maternity-ward-system/ViceHeadOfMaternitiyWard.puml
+!include ./Users/hunter/Coding/maternity-ward-system/FirstAid.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Chef.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Cook.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Cleaner.puml
+!include ./Users/hunter/Coding/maternity-ward-system/BreechMidwife.puml
+!include ./Users/hunter/Coding/maternity-ward-system/ISeniorEmployee.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Midwife.puml
+!include ./Users/hunter/Coding/maternity-ward-system/IRiskFactorEmployee.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Employee.puml
+!include ./Users/hunter/Coding/maternity-ward-system/Program.puml
+!include ./obj/Debug/net5.0/maternity-ward-system.AssemblyInfo.puml
+!include ./obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.puml
+@enduml

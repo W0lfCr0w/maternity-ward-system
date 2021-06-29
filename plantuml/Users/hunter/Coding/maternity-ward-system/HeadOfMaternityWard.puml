@@ -1,0 +1,10 @@
+@startuml
+class HeadOfMaternityWard {
+    + RiskFactorBonus : double <<get>>
+    + HeadOfMaternityWard(fname:string, lname:string, id:string, age:int, hours:double, managerSalaray:double)
+    + HeadOfMaternityWard(fname:string, lname:string, id:string, age:int, managerSalaray:double)
+    + <<override>> EndOfMonthSalary() : double
+}
+ViceHeadOfMaternitiyWard <|-- HeadOfMaternityWard
+IRiskFactorEmployee <|-- HeadOfMaternityWard
+@enduml
