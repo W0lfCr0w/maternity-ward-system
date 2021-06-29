@@ -1,0 +1,10 @@
+@startuml
+class Cleaner {
+    + HourlyPay : double <<get>>
+    + Cleaner(fname:string, lname:string, id:string, age:int, hours:double)
+    + Cleaner(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Cleaner
+IMinorEmployee <|-- Cleaner
+@enduml

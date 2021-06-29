@@ -1,0 +1,8 @@
+@startuml
+class WorkingHours {
+    + HoursWorked : double <<get>> <<set>>
+    + WorkingHours(hours:double)
+    + WorkingHours()
+    + AddHours(hours:double) : void
+}
+@enduml

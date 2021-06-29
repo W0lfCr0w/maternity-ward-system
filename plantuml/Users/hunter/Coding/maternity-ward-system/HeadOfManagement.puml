@@ -1,0 +1,15 @@
+@startuml
+class HeadOfManagement {
+    + ManagerSalary : double <<get>>
+    + HourlyPay : double <<get>>
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + HeadOfManagement(fname:string, lname:string, id:string, age:int, hours:double, managerSalaray:double)
+    + HeadOfManagement(fname:string, lname:string, id:string, age:int, managerSalaray:double)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- HeadOfManagement
+IDecisionMaker <|-- HeadOfManagement
+IManager <|-- HeadOfManagement
+@enduml

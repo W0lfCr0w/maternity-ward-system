@@ -1,0 +1,13 @@
+@startuml
+class SupervisorCleaner {
+    + HourlyPay : double <<get>>
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + SupervisorCleaner(fname:string, lname:string, id:string, age:int, hours:double)
+    + SupervisorCleaner(fname:string, lname:string, id:string, age:int)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- SupervisorCleaner
+IDecisionMaker <|-- SupervisorCleaner
+@enduml

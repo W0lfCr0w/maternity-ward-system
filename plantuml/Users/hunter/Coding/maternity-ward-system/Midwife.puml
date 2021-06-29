@@ -1,0 +1,11 @@
+@startuml
+class Midwife {
+    + HourlyPay : double <<get>>
+    + SeniorEmployeeRaise() : void
+    + Midwife(fname:string, lname:string, id:string, age:int, hours:double)
+    + Midwife(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Midwife
+ISeniorEmployee <|-- Midwife
+@enduml

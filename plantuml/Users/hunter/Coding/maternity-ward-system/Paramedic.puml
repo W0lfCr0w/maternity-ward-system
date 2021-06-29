@@ -1,0 +1,10 @@
+@startuml
+class Paramedic {
+    + HourlyPay : double <<get>>
+    + Paramedic(fname:string, lname:string, id:string, age:int, hours:double)
+    + Paramedic(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Paramedic
+IMinorEmployee <|-- Paramedic
+@enduml

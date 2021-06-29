@@ -1,0 +1,14 @@
+@startuml
+abstract class Employee {
+    + <<const>> BasePay : double = 30
+    + {abstract} EndOfMonthSalary() : double
+    + FirstName : string <<get>> <<set>>
+    + LastName : string <<get>> <<set>>
+    + Age : int <<get>> <<set>>
+    + ID : string <<get>> <<set>>
+    + MyEmployeeType : string <<get>> <<set>>
+    + HoursWorked : double <<get>> <<set>>
+    + ExtraField : string <<get>> <<set>>
+}
+Employee --> "workInformation" WorkingHours
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class ViceHeadOfMaternitiyWard {
+    + HourlyPay : double <<get>> <<protected set>>
+    + ManagerSalary : double <<get>> <<protected set>>
+    + UniqueJobDescripition : string <<get>> <<protected set>>
+    + MinimumMonthlyHours : int <<get>> <<protected set>>
+    + ViceHeadOfMaternitiyWard(fname:string, lname:string, id:string, age:int, hours:double, managerSalaray:double)
+    + ViceHeadOfMaternitiyWard(fname:string, lname:string, id:string, age:int, managerSalaray:double)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- ViceHeadOfMaternitiyWard
+IManager <|-- ViceHeadOfMaternitiyWard
+IDecisionMaker <|-- ViceHeadOfMaternitiyWard
+@enduml

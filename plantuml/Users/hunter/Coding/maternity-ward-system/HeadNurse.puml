@@ -1,0 +1,15 @@
+@startuml
+class HeadNurse {
+    + HourlyPay : double <<get>>
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + SeniorEmployeeRaise() : void
+    + HeadNurse(fname:string, lname:string, id:string, age:int, hours:double)
+    + HeadNurse(fname:string, lname:string, id:string, age:int)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- HeadNurse
+ISeniorEmployee <|-- HeadNurse
+IDecisionMaker <|-- HeadNurse
+@enduml

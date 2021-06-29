@@ -1,0 +1,15 @@
+@startuml
+class WardConsoles {
+    + WardConsoles()
+    + AddEmployeesConsole() : void
+    + GetHours() : double
+    + AddWorkHoursToEmployeesConsole() : void
+    + EmployeeSalaryConsole() : void
+    + GeneralConsole() : void
+}
+class Program {
+    {static} Main(args:string[]) : void
+}
+WardConsoles o-> "employeesDB" DB
+WardConsoles --> "EmployeeDB" DB
+@enduml

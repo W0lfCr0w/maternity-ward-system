@@ -1,0 +1,12 @@
+@startuml
+class Chef {
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + Chef(fname:string, lname:string, id:string, age:int, hours:double)
+    + Chef(fname:string, lname:string, id:string, age:int)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+SousChef <|-- Chef
+IDecisionMaker <|-- Chef
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+enum EmployeeType {
+    Cleaner,
+    PoisonCleaner,
+    HeadCleaner,
+    SupervisorCleaner,
+    Cook,
+    SousChef,
+    Chef,
+    FoodDistributer,
+    HeadOfManagement,
+    FirstAid,
+    Nurse,
+    Paramedic,
+    HeadNurse,
+    Midwife,
+    BreechMidwife,
+    Intern,
+    BreechIntern,
+    Doctor,
+    SeniorDoctor,
+    SpecialityDcotor,
+    ViceHeadOfWard,
+    HeadOfWard,
+}
+class DB {
+    + DB()
+    + GetFirstName() : string
+    + GetLastName() : string
+    IsAllDigits(s:string) : bool
+    + GetID() : string
+    + isIDExist(newID:string) : bool
+    + GetAge() : int
+    + GetManagerSalary() : double
+    + AddHoursToEmployee(id:string, hours:double) : void
+    + GetEmployeeDetails(id:string) : string[]
+    + AddToDB(e:Employee) : void
+    + AddEmployee(t:EmployeeType) : void
+    + SaveDB() : void
+    + LoadDB() : void
+}
+class GeneralEmployee {
+    + FirstName : string <<get>> <<set>>
+    + LastName : string <<get>> <<set>>
+    + ID : string <<get>> <<set>>
+    + Age : int <<get>> <<set>>
+    + MyEmployeeType : string <<get>> <<set>>
+    + HoursWorked : double <<get>> <<set>>
+    + ExtraField : string <<get>> <<set>>
+    + GeneralEmployee(fname:string, lname:string, age:int, id:string, e:string, hours:double, extra:string)
+}
+DB +-- GeneralEmployee
+@enduml

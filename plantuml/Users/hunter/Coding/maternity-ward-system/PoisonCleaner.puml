@@ -1,0 +1,17 @@
+@startuml
+class PoisonCleaner {
+    + ExpertHourlyPay : double <<get>>
+    + HourlyPay : double <<get>>
+    + RiskFactorBonus : double <<get>>
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + PoisonCleaner(fname:string, lname:string, id:string, age:int, hours:double)
+    + PoisonCleaner(fname:string, lname:string, id:string, age:int)
+    + GetDecisionMakerBonusPay() : double
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- PoisonCleaner
+IExpertEmployee <|-- PoisonCleaner
+IDecisionMaker <|-- PoisonCleaner
+IRiskFactorEmployee <|-- PoisonCleaner
+@enduml

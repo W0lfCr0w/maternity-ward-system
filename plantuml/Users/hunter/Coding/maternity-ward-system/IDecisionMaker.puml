@@ -1,0 +1,8 @@
+@startuml
+interface IDecisionMaker {
+    + UniqueJobDescripition : string <<get>>
+    + MinimumMonthlyHours : int <<get>>
+    + GetDecisionMakerBonusPay() : double
+}
+IMinorEmployee <|-- IDecisionMaker
+@enduml

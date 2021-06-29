@@ -1,0 +1,11 @@
+@startuml
+class Cook {
+    + HourlyPay : double <<get>>
+    + SeniorEmployeeRaise() : void
+    + Cook(fname:string, lname:string, id:string, age:int, hours:double)
+    + Cook(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Cook
+ISeniorEmployee <|-- Cook
+@enduml

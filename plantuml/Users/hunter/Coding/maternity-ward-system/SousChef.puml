@@ -1,0 +1,10 @@
+@startuml
+class SousChef {
+    + ExpertHourlyPay : double <<get>>
+    + SousChef(fname:string, lname:string, id:string, age:int, hours:double)
+    + SousChef(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Cook <|-- SousChef
+IExpertEmployee <|-- SousChef
+@enduml

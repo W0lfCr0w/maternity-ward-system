@@ -1,0 +1,10 @@
+@startuml
+class Nurse {
+    + HourlyPay : double <<get>>
+    + Nurse(fname:string, lname:string, id:string, age:int, hours:double)
+    + Nurse(fname:string, lname:string, id:string, age:int)
+    + <<override>> EndOfMonthSalary() : double
+}
+Employee <|-- Nurse
+IMinorEmployee <|-- Nurse
+@enduml

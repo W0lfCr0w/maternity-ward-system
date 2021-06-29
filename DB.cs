@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Text.RegularExpressions;
 namespace maternity_ward_system
 {
     public enum EmployeeType
@@ -49,9 +50,12 @@ namespace maternity_ward_system
             string fname;
             Console.WriteLine("Enter First Name:");
             fname = Console.ReadLine();
-            while (string.IsNullOrEmpty(fname) || fname.Length == 1)
+            while (string.IsNullOrEmpty(fname) || fname.Length == 1 || !Regex.Match(fname, "^[A-Z][a-zA-Z]*$").Success)
             {
-                Console.WriteLine("Name is empty or too short! Input employee's first name once more");
+                if(!Regex.Match(fname, "^[A-Z][a-zA-Z]*$").Success)
+                    System.Console.WriteLine("Name contains illegal characters");
+                else
+                    Console.WriteLine("Name is empty or too short! Input employee's first name once more");
                 fname = Console.ReadLine();
             }
             return fname;
@@ -61,9 +65,12 @@ namespace maternity_ward_system
             string lname;
             Console.WriteLine("Enter Last Name:");
             lname = Console.ReadLine();
-            while (string.IsNullOrEmpty(lname))
+            while (string.IsNullOrEmpty(lname) || lname.Length == 1 || !Regex.Match(lname, "^[A-Z][a-zA-Z]*$").Success)
             {
-                Console.WriteLine("Name Name is empty or too short! Input employee's last name once more");
+                if(!Regex.Match(lname, "^[A-Z][a-zA-Z]*$").Success)
+                    System.Console.WriteLine("Name contains illegal characters");
+                else
+                    Console.WriteLine("Name Name is empty or too short! Input employee's last name once more");
                 lname = Console.ReadLine();
             }
             return lname;
