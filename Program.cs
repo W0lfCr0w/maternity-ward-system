@@ -88,7 +88,7 @@ namespace maternity_ward_system
                 do
                 {
                     Console.WriteLine("Enter the ID of the employee that you want to see his/hers salary this month");
-                    Console.WriteLine("Type 'close' to save and exit");
+                    Console.WriteLine("Type 'close' to exit");
                     string response = Console.ReadLine();
                     if(EmployeeDB.isIDExist(response))
                     {
