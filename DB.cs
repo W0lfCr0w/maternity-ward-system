@@ -68,15 +68,26 @@ namespace maternity_ward_system
             }
             return lname;
         }
+        bool IsAllDigits(string s)
+        {
+            foreach (char c in s)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         public string GetID()
         {
             string id;
             Console.WriteLine("Enter Employee ID (5 digits long):");
             id = Console.ReadLine();
-            while (string.IsNullOrEmpty(id) || id.Length != 5 || isIDExist(id))
+            while (string.IsNullOrEmpty(id) || id.Length != 5 || isIDExist(id)|| !IsAllDigits(id))
             {
                 if(isIDExist(id))
                     Console.WriteLine("Error! ID already exists!");
+                else if(!IsAllDigits(id))
+                    Console.WriteLine("Error! ID must only have digits inside");
                 else
                     Console.WriteLine("Error! ID must be 5 digits!");
                 id = Console.ReadLine();
